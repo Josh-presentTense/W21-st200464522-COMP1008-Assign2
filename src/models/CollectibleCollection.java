@@ -10,14 +10,21 @@ public class CollectibleCollection {
     private String itemName;
     private double price;
     private String itemCondition;
-    private String collectibeCategory;
+    private String collectibleCategory;
 
-    public CollectibleCollection(String itemName, double price, String itemCondition, String collectibeCategory) {
+    /**
+     * Constructor with 4 parameters
+     * @param itemName - Name of the collectable
+     * @param price - Price of the collectable
+     * @param itemCondition - Collectable's condition (new, like-new, used, damaged)
+     * @param collectibleCategory - Category of the collectable item (comic, manga, movie, cartoon, anime, figure, statue)
+     */
+    public CollectibleCollection(String itemName, double price, String itemCondition, String collectibleCategory) {
         setCollectible_ID(++incrementingCount);
         setItemName(itemName);
         setPrice(price);
         setItemCondition(itemCondition);
-        setCollectibeCategory(collectibeCategory);
+        setCollectibleCategory(collectibleCategory);
     }
 
     public int getCollectible_ID() {
@@ -78,15 +85,15 @@ public class CollectibleCollection {
         return Arrays.asList("comic", "manga", "movie", "cartoon", "anime", "figure", "statue");
     }
 
-    public String getCollectibeCategory() {
-        return collectibeCategory;
+    public String getCollectibleCategory() {
+        return collectibleCategory;
     }
 
-    public void setCollectibeCategory(String collectibeCategory) {
-        collectibeCategory = collectibeCategory.toLowerCase().trim();
+    public void setCollectibleCategory(String collectibleCategory) {
+        collectibleCategory = collectibleCategory.toLowerCase().trim();
         List<String> acceptedCategories = acceptedCollectibleCategories();
-        if (acceptedCategories.contains(collectibeCategory))
-            this.collectibeCategory = collectibeCategory;
+        if (acceptedCategories.contains(collectibleCategory))
+            this.collectibleCategory = collectibleCategory;
         else
             throw new IllegalArgumentException("Collectible category is not accepted, accepted categories are: " + acceptedCollectibleCategories());
     }

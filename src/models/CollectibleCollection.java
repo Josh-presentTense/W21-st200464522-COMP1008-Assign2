@@ -33,6 +33,7 @@ public class CollectibleCollection {
     }
 
     public void setItemName(String itemName) {
+        itemName = itemName.trim();
         if (itemName.length() > 3)
             this.itemName = itemName;
         else
@@ -62,7 +63,7 @@ public class CollectibleCollection {
     }
 
     public void setItemCondition(String itemCondition) {
-        itemCondition = itemCondition.toLowerCase();
+        itemCondition = itemCondition.toLowerCase().trim();
         List<String> acceptedConditions = acceptedItemConditions();
         if (acceptedConditions.contains(itemCondition))
             this.itemCondition = itemCondition;
@@ -82,7 +83,7 @@ public class CollectibleCollection {
     }
 
     public void setCollectibeCategory(String collectibeCategory) {
-        collectibeCategory = collectibeCategory.toLowerCase();
+        collectibeCategory = collectibeCategory.toLowerCase().trim();
         List<String> acceptedCategories = acceptedCollectibleCategories();
         if (acceptedCategories.contains(collectibeCategory))
             this.collectibeCategory = collectibeCategory;

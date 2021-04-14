@@ -4,44 +4,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserCollection {
-    private static int numOfItems = 0;
-    private static int totalPrice = 0;
-    private static ArrayList<CollectibleCollection> collectorsItems = new ArrayList<>();
+    private ArrayList<CollectibleCollection> collectorsItems;
 
-    public UserCollection(PrintMedia printMediaCollectable) {
-        collectorsItems.add(printMediaCollectable);
-        numOfItems += 1;
-        totalPrice += printMediaCollectable.getPrice();
+    public UserCollection() {
+        collectorsItems = new ArrayList<>();
     }
 
-    public UserCollection(VideoMedia videoMediaCollectable) {
-        collectorsItems.add(videoMediaCollectable);
-        numOfItems += 1;
-        totalPrice += videoMediaCollectable.getPrice();
+    /**
+     * This method returns the number of items in the user's collection
+     * @return int
+     */
+    public int getNumOfItems() {
+        return collectorsItems.size();
     }
 
-    public UserCollection(Figure figureCollectable) {
-        collectorsItems.add(figureCollectable);
-        numOfItems += 1;
-        totalPrice += figureCollectable.getPrice();
-    }
-
-    public static int getNumOfItems() {
-        return numOfItems;
-    }
-
-    public static int getTotalPrice() {
+    /**
+     * This method returns the total price of the user's collection
+     * @return int
+     */
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (CollectibleCollection collectible : collectorsItems)
+            totalPrice += collectible.getPrice();
         return totalPrice;
+    }
+
+    /**
+     * This method adds a collectable to the users collection
+     * @param collectable - an object of CollectibleCollection (A collectable item)
+     */
+    public void addCollectable(CollectibleCollection collectable){
+        collectorsItems.add(collectable);
     }
 
     /**
      * Method that returns an arraylist of all print media in the user's collection
      * @return ArrayList
      */
-    public ArrayList<CollectibleCollection> collectionPrintMedia() {
+    public ArrayList<CollectibleCollection> getPrintMediaCollection() {
         ArrayList<CollectibleCollection> printMediaList = new ArrayList<>();
         List<String> printCategories = PrintMedia.printMediaCategories();
         for (CollectibleCollection collectible : collectorsItems) {
+            if (collectible.getClass() == PrintMedia.class)
+            {
+
+            }
             if (printCategories.contains(collectible.getCollectibleCategory()))
                 printMediaList.add(collectible);
         }
@@ -52,7 +59,7 @@ public class UserCollection {
      * Method that returns an arraylist of all video media in the user's collection
      * @return ArrayList
      */
-    public ArrayList<CollectibleCollection> collectionVideoMedia() {
+    public ArrayList<CollectibleCollection> getVideoMediaCollection() {
         ArrayList<CollectibleCollection> videoMediaList = new ArrayList<>();
         List<String> videoCategories = VideoMedia.videoMediaCategories();
         for (CollectibleCollection collectible : collectorsItems) {
@@ -66,7 +73,7 @@ public class UserCollection {
      * Method that returns an arraylist of all figures in the user's collection
      * @return ArrayList
      */
-    public ArrayList<CollectibleCollection> collectionFigure() {
+    public ArrayList<CollectibleCollection> getFigureCollection() {
         ArrayList<CollectibleCollection> figureList = new ArrayList<>();
         List<String> figureCategories = Figure.figureCategories();
         for (CollectibleCollection collectible : collectorsItems) {

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CollectionManagerMenuViewController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" spacing="20.0">
+         <children>
+            <StackPane>
+               <children>
+                  <Label text="Collection Manager" underline="true">
+                     <font>
+                        <Font size="36.0" />
+                     </font></Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="100.0" />
+               </padding>
+            </StackPane>
+            <HBox spacing="20.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefWidth="380.0" spacing="20.0">
+                     <children>
+                        <Label text="New Entry">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <ComboBox fx:id="categoryComboBox" prefHeight="25.0" prefWidth="149.0" promptText="Select Category" />
+                        <Button mnemonicParsing="false" onAction="#createButton" text="Create" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefWidth="380.0" spacing="20.0">
+                     <children>
+                        <Label text="View Collection">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Button mnemonicParsing="false" onAction="#viewButton" text="View" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

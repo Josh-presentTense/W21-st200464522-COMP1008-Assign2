@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserCollectionViewController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" spacing="20.0">
+         <children>
+            <StackPane>
+               <children>
+                  <Label text="User Collection" underline="true">
+                     <font>
+                        <Font size="36.0" />
+                     </font></Label>
+               </children>
+            </StackPane>
+            <ListView fx:id="collectionListView" prefHeight="200.0" prefWidth="200.0" />
+            <TableView fx:id="collectionTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                 <TableColumn fx:id="idTableColumn" prefWidth="48.0" text="ID" />
+                 <TableColumn fx:id="itemNameTableColumn" prefWidth="102.0" text="Item Name" />
+                 <TableColumn fx:id="priceTableColumn" prefWidth="59.0" text="Price" />
+                 <TableColumn fx:id="conditionTableColumn" prefWidth="91.0" text="Condition" />
+                 <TableColumn fx:id="categoryTableColumn" prefWidth="75.0" text="Category" />
+                 <TableColumn fx:id="parameter1TableColumn" prefWidth="75.0" text="Parameter1" />
+                 <TableColumn fx:id="parameter2TableColumn" prefWidth="75.0" text="Parameter2" />
+                 <TableColumn fx:id="parameter3TableColumn" prefWidth="75.0" text="Parameter3" />
+                 <TableColumn fx:id="parameter4TableColumn" prefWidth="75.0" text="Parameter4" />
+              </columns>
+            </TableView>
+            <AnchorPane>
+               <children>
+                  <Button layoutX="328.0" layoutY="23.0" mnemonicParsing="false" text="Button" AnchorPane.rightAnchor="400.0" />
+                  <Button layoutX="380.0" layoutY="23.0" mnemonicParsing="false" text="Button" AnchorPane.leftAnchor="400.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

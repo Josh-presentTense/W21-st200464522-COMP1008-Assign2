@@ -80,4 +80,9 @@ public class VideoMedia extends CollectibleCollection{
     public static List<String> videoMediaCategories() {
         return Arrays.asList("TV show", "Movie", "Cartoon", "Anime");
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tDirector: %s \tStudio: %s \tepisodes: %d \tRun Time: %d", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), director, studio, episodes, runTime);
+    }
 }

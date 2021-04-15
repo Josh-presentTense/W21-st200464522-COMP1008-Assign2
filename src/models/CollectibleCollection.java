@@ -100,6 +100,6 @@ public class CollectibleCollection {
 
     @Override
     public String toString() {
-        return String.format("ID: %d \nItem Name: %s \nPrice: $%d \nCondition: %s \nCategory: %s \n",getCollectible_ID(), getItemName(), getPrice(), getItemCondition(), getCollectibleCategory());
+        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory());
     }
 }

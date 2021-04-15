@@ -90,4 +90,9 @@ public class Figure extends CollectibleCollection{
     public static List<String> figureCategories() {
         return Arrays.asList("Figure", "Statue");
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tCompany: %s \tCharacter: %s \tOrigin: %s \tScale: %s", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), companyName, characterName, origin, scale);
+    }
 }

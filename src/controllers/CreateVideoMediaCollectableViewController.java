@@ -83,7 +83,7 @@ public class CreateVideoMediaCollectableViewController implements Initializable 
         episodesSpinner.setValueFactory(episodesValueFactory);
         episodesSpinner.setEditable(true);
 
-        SpinnerValueFactory<Integer> runTimeValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 6000, 350);
+        SpinnerValueFactory<Integer> runTimeValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000, 350);
         runTimeSpinner.setValueFactory(runTimeValueFactory);
         runTimeSpinner.setEditable(true);
     }

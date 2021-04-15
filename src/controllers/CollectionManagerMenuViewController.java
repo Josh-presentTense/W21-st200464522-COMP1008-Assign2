@@ -33,6 +33,11 @@ public class CollectionManagerMenuViewController implements Initializable {
             SceneChanger.changeScenes(event, "../views/createFigureCollectableView.fxml", "CollectionManager - New Figure Entry");
     }
 
+    @FXML
+    private void viewButton(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event, "../views/userCollectionView.fxml", "CollectionManager - User Collection");
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         errorMessageLabel.setText("");

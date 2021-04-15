@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import models.CollectibleCollection;
 import models.PrintMedia;
 import utilities.DBUtility;
 import utilities.SceneChanger;
@@ -54,6 +55,7 @@ public class CreatePrintMediaCollectableController implements Initializable {
                     publisherTextField.getText(),
                     pageCountSpinner.getValue()
             );
+            DBUtility.addNewPrintMedia(printMediaCollectable);
             clearUserInput();
             errorMessageLabel.setText(printMediaCollectable.toString());
         } catch (IllegalArgumentException e){
@@ -75,11 +77,11 @@ public class CreatePrintMediaCollectableController implements Initializable {
         itemConditionComboBox.getItems().addAll(DBUtility.getItemCondition());
         itemCategoryComboBox.getItems().addAll(DBUtility.getPrintMediaCategories());
 
-        SpinnerValueFactory<Integer> priceValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 500, 15);
+        SpinnerValueFactory<Integer> priceValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 2000, 15);
         itemPriceSpinner.setValueFactory(priceValueFactory);
         itemPriceSpinner.setEditable(true);
 
-        SpinnerValueFactory<Integer> pageCountValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 500, 30);
+        SpinnerValueFactory<Integer> pageCountValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 2000, 30);
         pageCountSpinner.setValueFactory(pageCountValueFactory);
         pageCountSpinner.setEditable(true);
     }

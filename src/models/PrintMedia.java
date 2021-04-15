@@ -81,4 +81,9 @@ public class PrintMedia extends CollectibleCollection{
     public static List<String> printMediaCategories() {
         return Arrays.asList("Comic book", "Manga");
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tAuthor: %s \tIllustrator: %s \tPublisher: %s \tPage Count: %d", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), author, illustrator, publisher, pageCount);
+    }
 }

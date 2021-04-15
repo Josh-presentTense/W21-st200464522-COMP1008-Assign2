@@ -41,7 +41,7 @@
                            <font>
                               <Font size="24.0" />
                            </font></Label>
-                        <Button mnemonicParsing="false" text="View" />
+                        <Button mnemonicParsing="false" onAction="#viewButton" text="View" />
                      </children>
                   </VBox>
                </children>

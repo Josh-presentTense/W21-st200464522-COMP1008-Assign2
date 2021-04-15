@@ -88,6 +88,6 @@ public class Figure extends CollectibleCollection{
      * This method returns a list of collectible categories for the Figure subclass
      */
     public static List<String> figureCategories() {
-        return Arrays.asList("figure", "statue");
+        return Arrays.asList("Figure", "Statue");
     }
 }

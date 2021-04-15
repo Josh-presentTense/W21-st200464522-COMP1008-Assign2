@@ -82,7 +82,7 @@ public class CollectibleCollection {
      * This method returns a list of accepted collectible categories
      */
     public static List<String> acceptedCollectibleCategories() {
-        return Arrays.asList("Comic book", "Manga", "Movie", "Cartoon", "Anime", "Figure", "Statue");
+        return Arrays.asList("Comic book", "Manga", "TV show", "Movie", "Cartoon", "Anime", "Figure", "Statue");
     }
 
     public String getCollectibleCategory() {
@@ -96,5 +96,10 @@ public class CollectibleCollection {
             this.collectibleCategory = collectibleCategory;
         else
             throw new IllegalArgumentException("Collectible category is not accepted, accepted categories are: " + acceptedCollectibleCategories());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d \nItem Name: %s \nPrice: $%d \nCondition: %s \nCategory: %s \n",getCollectible_ID(), getItemName(), getPrice(), getItemCondition(), getCollectibleCategory());
     }
 }

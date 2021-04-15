@@ -1,7 +1,13 @@
 package utilities;
 
+import models.CollectibleCollection;
+import models.Figure;
+import models.PrintMedia;
+import models.VideoMedia;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DBUtility {
 
@@ -21,7 +27,7 @@ public class DBUtility {
      */
     public static ArrayList<String> getItemCondition() {
         ArrayList<String> conditions = new ArrayList<>();
-        conditions.addAll(Arrays.asList("New", "Like-New", "Used", "Damaged"));
+        conditions.addAll(CollectibleCollection.acceptedItemConditions());
         return conditions;
     }
 
@@ -31,7 +37,7 @@ public class DBUtility {
      */
     public static ArrayList<String> getPrintMediaCategories() {
         ArrayList<String> pmCategories = new ArrayList<>();
-        pmCategories.addAll(Arrays.asList("Comic book", "Manga"));
+        pmCategories.addAll(PrintMedia.printMediaCategories());
         return pmCategories;
     }
 
@@ -41,7 +47,7 @@ public class DBUtility {
      */
     public static ArrayList<String> getVideoMediaCategories() {
         ArrayList<String> vmCategories = new ArrayList<>();
-        vmCategories.addAll(Arrays.asList("TV show", "Movie", "Cartoon", "Anime"));
+        vmCategories.addAll(VideoMedia.videoMediaCategories());
         return vmCategories;
     }
 
@@ -51,7 +57,17 @@ public class DBUtility {
      */
     public static ArrayList<String> getFigureCategories() {
         ArrayList<String> fgCategories = new ArrayList<>();
-        fgCategories.addAll(Arrays.asList("Figure", "Statue"));
+        fgCategories.addAll(Figure.figureCategories());
         return fgCategories;
+    }
+
+    /**
+     * This method returns the scale classifications
+     * @return ArrayList : String
+     */
+    public static ArrayList<String> getScaleClassifications() {
+        ArrayList<String> scaleClassifications = new ArrayList<>();
+        scaleClassifications.addAll(Figure.acceptedScaleClassifications());
+        return scaleClassifications;
     }
 }

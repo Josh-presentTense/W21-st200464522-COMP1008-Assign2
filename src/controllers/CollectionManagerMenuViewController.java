@@ -10,7 +10,6 @@ import utilities.SceneChanger;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class CollectionManagerMenuViewController implements Initializable {
@@ -29,9 +28,9 @@ public class CollectionManagerMenuViewController implements Initializable {
         else if (categoryComboBox.getValue().equals("Comic book, Manga"))
             SceneChanger.changeScenes(event, "../views/createPrintMediaCollectableView.fxml", "CollectionManager - New Print Media Entry");
         else if (categoryComboBox.getValue().equals("TV show, Movie, Cartoon, Anime"))
-            SceneChanger.changeScenes(event, "../views/createPrintMediaCollectableView.fxml", "CollectionManager - New Video Media Entry");
+            SceneChanger.changeScenes(event, "../views/createVideoMediaCollectableView.fxml", "CollectionManager - New Video Media Entry");
         else if (categoryComboBox.getValue().equals("Figure, Statue"))
-            SceneChanger.changeScenes(event, "../views/createPrintMediaCollectableView.fxml", "CollectionManager - New Figure Entry");
+            SceneChanger.changeScenes(event, "../views/createFigureCollectableView.fxml", "CollectionManager - New Figure Entry");
     }
 
     @Override

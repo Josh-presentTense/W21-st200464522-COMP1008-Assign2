@@ -32,7 +32,7 @@
                               <Font size="24.0" />
                            </font></Label>
                         <ComboBox fx:id="categoryComboBox" prefHeight="25.0" prefWidth="149.0" promptText="Select Category" />
-                        <Button mnemonicParsing="false" onAction="#createButton" text="Create" />
+                        <Button mnemonicParsing="false" onAction="#createNewEntry" text="Create" />
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefWidth="380.0" spacing="20.0">
@@ -41,7 +41,7 @@
                            <font>
                               <Font size="24.0" />
                            </font></Label>
-                        <Button mnemonicParsing="false" onAction="#viewButton" text="View" />
+                        <Button mnemonicParsing="false" text="View" />
                      </children>
                   </VBox>
                </children>

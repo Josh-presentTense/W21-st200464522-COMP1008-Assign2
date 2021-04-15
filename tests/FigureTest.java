@@ -9,7 +9,7 @@ class FigureTest {
 
     @BeforeEach
     void setUp() {
-        item1 = new Figure("Test", 2.50, "new", "figure", "ActionWorld", "Tofu", "Resident Evil", "1/6");
+        item1 = new Figure("Test", 2, "new", "figure", "ActionWorld", "Tofu", "Resident Evil", "1/6");
     }
 
     @Test

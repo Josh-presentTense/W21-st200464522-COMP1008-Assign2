@@ -20,7 +20,7 @@ public class PrintMedia extends CollectibleCollection{
      * @param publisher - Name of the publishing company
      * @param pageCount - Page count
      */
-    public PrintMedia(String itemName, double price, String itemCondition, String collectibleCategory, String author, String illustrator, String publisher, int pageCount) {
+    public PrintMedia(String itemName, int price, String itemCondition, String collectibleCategory, String author, String illustrator, String publisher, int pageCount) {
         super(itemName, price, itemCondition, collectibleCategory);
         setAuthor(author);
         setIllustrator(illustrator);
@@ -79,6 +79,11 @@ public class PrintMedia extends CollectibleCollection{
      * This method returns a list of collectible categories for the PrintMedia subclass
      */
     public static List<String> printMediaCategories() {
-        return Arrays.asList("comic", "manga");
+        return Arrays.asList("Comic book", "Manga");
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID:%d %s - $%d, %s, %s, %s, %s, %s, Page Count: %d",getCollectible_ID(), getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), author, illustrator, publisher, pageCount);
     }
 }

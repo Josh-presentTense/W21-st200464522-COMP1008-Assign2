@@ -9,7 +9,7 @@ class PrintMediaTest {
 
     @BeforeEach
     void setUp() {
-        item1 = new PrintMedia("Test", 2.50, "new", "comic", "Bob C.", "Andrew A.", "Rad Books", 22);
+        item1 = new PrintMedia("Test", 2, "new", "comic", "Bob C.", "Andrew A.", "Rad Books", 22);
     }
 
     @Test

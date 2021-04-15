@@ -9,7 +9,7 @@ class CollectibleCollectionTest {
 
     @BeforeEach
     void setUp() {
-        item1 = new CollectibleCollection("test", 14.99, "new", "manga");
+        item1 = new CollectibleCollection("test", 15, "new", "manga");
     }
 
     @Test
@@ -25,7 +25,7 @@ class CollectibleCollectionTest {
 
     @Test
     void setPrice() {
-        assertEquals(14.99, item1.getPrice());
+        assertEquals(15, item1.getPrice());
     }
 
     @Test

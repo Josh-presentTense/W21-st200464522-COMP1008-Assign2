@@ -20,7 +20,7 @@ public class VideoMedia extends CollectibleCollection{
      * @param episodes - Number of episodes, a movie should be treated as 1 episode
      * @param runTime - Run time in minutes, round up. ex: 300:31 becomes 301
      */
-    public VideoMedia(String itemName, double price, String itemCondition, String collectibleCategory, String director, String studio, int episodes, int runTime) {
+    public VideoMedia(String itemName, int price, String itemCondition, String collectibleCategory, String director, String studio, int episodes, int runTime) {
         super(itemName, price, itemCondition, collectibleCategory);
         setDirector(director);
         setStudio(studio);
@@ -78,6 +78,6 @@ public class VideoMedia extends CollectibleCollection{
      * This method returns a list of collectible categories for the VideoMedia subclass
      */
     public static List<String> videoMediaCategories() {
-        return Arrays.asList("movie", "cartoon", "anime");
+        return Arrays.asList("TV show", "Movie", "Cartoon", "Anime");
     }
 }

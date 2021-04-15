@@ -3,6 +3,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CreatePrintMediaCollectableController">
    <children>
@@ -23,10 +24,22 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Item Name:" />
-                        <Label text="Price:" GridPane.rowIndex="1" />
-                        <Label text="Condition:" GridPane.rowIndex="2" />
-                        <Label text="Category:" GridPane.rowIndex="3" />
+                        <Label text="Item Name:">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Price:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Condition:" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Category:" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                         <TextField fx:id="itemNameTextField" maxWidth="200.0" GridPane.columnIndex="1" />
                         <ComboBox fx:id="itemConditionComboBox" maxWidth="200.0" promptText="Select Item Condition" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <ComboBox fx:id="itemCategoryComboBox" maxWidth="200.0" promptText="Select Item Category" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -45,16 +58,51 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Author:" />
-                        <Label text="Illustrator:" GridPane.rowIndex="1" />
-                        <Label text="Publisher:" GridPane.rowIndex="2" />
-                        <Label text="Page Count:" GridPane.rowIndex="3" />
+                        <Label text="Author:">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Illustrator:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Publisher:" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Page Count:" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
                         <TextField fx:id="authorTextField" maxWidth="200.0" GridPane.columnIndex="1" />
                         <TextField fx:id="illustratorTextField" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="publisherTextField" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Spinner fx:id="pageCountSpinner" maxWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label fx:id="errorMessageLabel" prefWidth="380.0" text="Label" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="200.0" prefWidth="380.0">
+                     <children>
+                        <Button layoutX="150.0" layoutY="14.0" mnemonicParsing="false" onAction="#submitButton" text="Submit">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="160.0" layoutY="61.0" mnemonicParsing="false" onAction="#backButton" text="Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </children>
             </HBox>
          </children>

@@ -20,7 +20,7 @@ public class Figure extends CollectibleCollection{
      * @param origin - Name of the series the character is from
      * @param scale - scale category (1/12, 1/10, 1/8, 1/7, 1/6, 1/4, 1/3, 1/2, 1/1, n/a)
      */
-    public Figure(String itemName, double price, String itemCondition, String collectibleCategory, String companyName, String characterName, String origin, String scale) {
+    public Figure(String itemName, int price, String itemCondition, String collectibleCategory, String companyName, String characterName, String origin, String scale) {
         super(itemName, price, itemCondition, collectibleCategory);
         setCompanyName(companyName);
         setCharacterName(characterName);

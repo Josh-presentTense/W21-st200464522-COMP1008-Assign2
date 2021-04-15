@@ -21,7 +21,7 @@ public class DBUtility {
      */
     public static ArrayList<String> getItemCondition() {
         ArrayList<String> conditions = new ArrayList<>();
-        conditions.addAll(Arrays.asList("new", "like-new", "used", "damaged"));
+        conditions.addAll(Arrays.asList("New", "Like-New", "Used", "Damaged"));
         return conditions;
     }
 

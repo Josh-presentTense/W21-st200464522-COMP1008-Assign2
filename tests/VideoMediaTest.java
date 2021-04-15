@@ -9,7 +9,7 @@ class VideoMediaTest {
 
     @BeforeEach
     void setUp() {
-        item1 = new VideoMedia("Test", 2.50, "new", "cartoon", "Kyle", "Lightbox", 10, 200);
+        item1 = new VideoMedia("Test", 3, "new", "cartoon", "Kyle", "Lightbox", 10, 200);
     }
 
     @Test

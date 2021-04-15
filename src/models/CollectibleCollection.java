@@ -8,7 +8,7 @@ public class CollectibleCollection {
     private static int incrementingCount = 0;
     private int collectible_ID;
     private String itemName;
-    private double price;
+    private int price;
     private String itemCondition;
     private String collectibleCategory;
 
@@ -19,7 +19,7 @@ public class CollectibleCollection {
      * @param itemCondition - Collectable's condition (new, like-new, used, damaged)
      * @param collectibleCategory - Category of the collectable item (comic, manga, movie, cartoon, anime, figure, statue)
      */
-    public CollectibleCollection(String itemName, double price, String itemCondition, String collectibleCategory) {
+    public CollectibleCollection(String itemName, int price, String itemCondition, String collectibleCategory) {
         setCollectible_ID(++incrementingCount);
         setItemName(itemName);
         setPrice(price);
@@ -47,11 +47,11 @@ public class CollectibleCollection {
             throw new IllegalArgumentException("Item name must be greater than 3 characters");
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         if (price > 0)
             this.price = price;
         else
@@ -62,7 +62,7 @@ public class CollectibleCollection {
      * This method returns a list of accepted item conditions of a collectible
      */
     public static List<String> acceptedItemConditions() {
-        return Arrays.asList("new", "like-new", "used", "damaged");
+        return Arrays.asList("New", "Like-New", "Used", "Damaged");
     }
 
     public String getItemCondition() {
@@ -70,19 +70,19 @@ public class CollectibleCollection {
     }
 
     public void setItemCondition(String itemCondition) {
-        itemCondition = itemCondition.toLowerCase().trim();
+        itemCondition = itemCondition.trim();
         List<String> acceptedConditions = acceptedItemConditions();
         if (acceptedConditions.contains(itemCondition))
             this.itemCondition = itemCondition;
         else
-            throw new IllegalArgumentException("Item condition is not accepted, accepted item conditions are: " + acceptedItemConditions());
+            throw new IllegalArgumentException("Condition is not accepted, accepted item conditions are: " + acceptedItemConditions());
     }
 
     /**
      * This method returns a list of accepted collectible categories
      */
     public static List<String> acceptedCollectibleCategories() {
-        return Arrays.asList("comic", "manga", "movie", "cartoon", "anime", "figure", "statue");
+        return Arrays.asList("Comic book", "Manga", "Movie", "Cartoon", "Anime", "Figure", "Statue");
     }
 
     public String getCollectibleCategory() {
@@ -90,7 +90,7 @@ public class CollectibleCollection {
     }
 
     public void setCollectibleCategory(String collectibleCategory) {
-        collectibleCategory = collectibleCategory.toLowerCase().trim();
+        collectibleCategory = collectibleCategory.trim();
         List<String> acceptedCategories = acceptedCollectibleCategories();
         if (acceptedCategories.contains(collectibleCategory))
             this.collectibleCategory = collectibleCategory;

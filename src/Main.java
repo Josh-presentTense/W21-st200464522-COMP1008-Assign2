@@ -15,7 +15,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("views/collectionManagerMenuView.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("CollectionManager");
+        stage.setTitle("CollectionManager - Menu");
         stage.show();
     }
 }

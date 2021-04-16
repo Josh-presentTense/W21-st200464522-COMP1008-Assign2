@@ -84,6 +84,6 @@ public class PrintMedia extends CollectibleCollection{
 
     @Override
     public String toString() {
-        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tAuthor: %s \tIllustrator: %s \tPublisher: %s \tPage Count: %d", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), author, illustrator, publisher, pageCount);
+        return String.format("%s", getItemName());
     }
 }

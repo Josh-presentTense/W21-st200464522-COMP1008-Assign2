@@ -83,6 +83,6 @@ public class VideoMedia extends CollectibleCollection{
 
     @Override
     public String toString() {
-        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tDirector: %s \tStudio: %s \tepisodes: %d \tRun Time: %d", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), director, studio, episodes, runTime);
+        return String.format("%s", getItemName());
     }
 }

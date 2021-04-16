@@ -48,8 +48,8 @@
                         </GridPane>
                         <GridPane hgap="10.0" prefWidth="380.0" vgap="10.0">
                             <columnConstraints>
-                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="114.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="256.0" />
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="139.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="231.0" />
                             </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -58,11 +58,11 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Company:" wrapText="true">
+                                <Label prefHeight="27.0" prefWidth="84.0" text="Company:" wrapText="true">
                                     <font>
                                         <Font size="18.0" />
                                     </font></Label>
-                                <Label prefHeight="30.0" prefWidth="120.0" text="Character Name:" wrapText="true" GridPane.rowIndex="1">
+                                <Label prefHeight="30.0" prefWidth="134.0" text="Character Name:" wrapText="true" GridPane.rowIndex="1">
                                     <font>
                                         <Font size="18.0" />
                                     </font></Label>
@@ -77,7 +77,7 @@
                                 <TextField fx:id="companyTextField" maxWidth="200.0" GridPane.columnIndex="1" />
                                 <TextField fx:id="characterTextField" maxWidth="200.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                 <TextField fx:id="originTextField" maxWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="scaleComboBox" maxWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="scaleComboBox" maxWidth="200.0" prefWidth="200.0" promptText="Select Scale" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                             </children>
                         </GridPane>
                     </children>

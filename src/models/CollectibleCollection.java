@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class CollectibleCollection {
-    private static int incrementingCount = 0;
-    private int collectible_ID;
     private String itemName;
     private int price;
     private String itemCondition;
@@ -20,19 +18,10 @@ public class CollectibleCollection {
      * @param collectibleCategory - Category of the collectable item (comic, manga, movie, cartoon, anime, figure, statue)
      */
     public CollectibleCollection(String itemName, int price, String itemCondition, String collectibleCategory) {
-        setCollectible_ID(++incrementingCount);
         setItemName(itemName);
         setPrice(price);
         setItemCondition(itemCondition);
         setCollectibleCategory(collectibleCategory);
-    }
-
-    public int getCollectible_ID() {
-        return collectible_ID;
-    }
-
-    public void setCollectible_ID(int collectible_ID) {
-        this.collectible_ID = collectible_ID;
     }
 
     public String getItemName() {

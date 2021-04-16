@@ -13,11 +13,6 @@ class CollectibleCollectionTest {
     }
 
     @Test
-    void getCollectible_ID() {
-        assertEquals(1, item1.getCollectible_ID());
-    }
-
-    @Test
     void setItemName() {
         item1.setItemName("      test      ");
         assertEquals("test", item1.getItemName());

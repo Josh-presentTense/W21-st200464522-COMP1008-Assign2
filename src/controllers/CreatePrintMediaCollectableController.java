@@ -55,9 +55,9 @@ public class CreatePrintMediaCollectableController implements Initializable {
                     publisherTextField.getText(),
                     pageCountSpinner.getValue()
             );
-            DBUtility.addNewPrintMedia(printMediaCollectable);
+            int print_media_ID = DBUtility.addNewPrintMedia(printMediaCollectable);
             clearUserInput();
-            errorMessageLabel.setText(printMediaCollectable.toString());
+            errorMessageLabel.setText("PM.ID: " + print_media_ID + " " + printMediaCollectable.toString() + " Created");
         } catch (IllegalArgumentException e){
             errorMessageLabel.setText(e.getMessage());
         } catch (Exception e) {

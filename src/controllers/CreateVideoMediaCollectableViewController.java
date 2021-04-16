@@ -54,8 +54,9 @@ public class CreateVideoMediaCollectableViewController implements Initializable 
                     episodesSpinner.getValue(),
                     runTimeSpinner.getValue()
             );
+            int video_media_ID = DBUtility.addNewVideoMedia(videoMediaCollectable);
             clearUserInput();
-            errorMessageLabel.setText(videoMediaCollectable.toString());
+            errorMessageLabel.setText("VM.ID: " + video_media_ID + " " + videoMediaCollectable.toString() + " Created");
         } catch (IllegalArgumentException e){
             errorMessageLabel.setText(e.getMessage());
         } catch (Exception e) {

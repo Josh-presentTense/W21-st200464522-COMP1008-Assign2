@@ -93,6 +93,6 @@ public class Figure extends CollectibleCollection{
 
     @Override
     public String toString() {
-        return String.format("%s \tPrice: $%d \tCondition: %s \tCategory: %s \tCompany: %s \tCharacter: %s \tOrigin: %s \tScale: %s", getItemName(), getPrice(), getItemCondition(), getCollectibleCategory(), companyName, characterName, origin, scale);
+        return String.format("%s", getItemName());
     }
 }

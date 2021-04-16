@@ -17,24 +17,118 @@
                      </font></Label>
                </children>
             </StackPane>
-            <ListView fx:id="collectionListView" prefHeight="200.0" prefWidth="200.0" />
-            <TableView fx:id="collectionTableView" prefHeight="200.0" prefWidth="200.0">
-              <columns>
-                 <TableColumn fx:id="idTableColumn" prefWidth="48.0" text="ID" />
-                 <TableColumn fx:id="itemNameTableColumn" prefWidth="102.0" text="Item Name" />
-                 <TableColumn fx:id="priceTableColumn" prefWidth="59.0" text="Price" />
-                 <TableColumn fx:id="conditionTableColumn" prefWidth="91.0" text="Condition" />
-                 <TableColumn fx:id="categoryTableColumn" prefWidth="75.0" text="Category" />
-                 <TableColumn fx:id="parameter1TableColumn" prefWidth="75.0" text="Parameter1" />
-                 <TableColumn fx:id="parameter2TableColumn" prefWidth="75.0" text="Parameter2" />
-                 <TableColumn fx:id="parameter3TableColumn" prefWidth="75.0" text="Parameter3" />
-                 <TableColumn fx:id="parameter4TableColumn" prefWidth="75.0" text="Parameter4" />
-              </columns>
-            </TableView>
+            <VBox>
+               <children>
+                  <Label text="Item Name:" underline="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="20.0">
+                     <children>
+                        <ListView fx:id="collectionListView" maxWidth="380.0" onMouseClicked="#getInfoFromSelectedItem" prefHeight="200.0" prefWidth="380.0" />
+                        <VBox spacing="20.0">
+                           <children>
+                              <CheckBox fx:id="printMediaCheckBox" mnemonicParsing="false" text="View Print Media" />
+                              <CheckBox fx:id="videoMediaCheckBox" mnemonicParsing="false" text="View Video Media" />
+                              <CheckBox fx:id="figureCheckBox" mnemonicParsing="false" text="View Figures" />
+                              <Button mnemonicParsing="false" onAction="#updateView" text="Update View" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <GridPane fx:id="itemInfoGridPane" hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Price:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Condition:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Category:" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param1NameLabel" text="Label" GridPane.columnIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param2NameLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param3NameLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param4NameLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="priceLabel" text="Label" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="conditionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="categoryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param1Label" text="Label" GridPane.columnIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param2Label" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param3Label" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="param4Label" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
             <AnchorPane>
                <children>
-                  <Button layoutX="328.0" layoutY="23.0" mnemonicParsing="false" text="Button" AnchorPane.rightAnchor="400.0" />
-                  <Button layoutX="380.0" layoutY="23.0" mnemonicParsing="false" text="Button" AnchorPane.leftAnchor="400.0" />
+                  <Button layoutX="328.0" layoutY="23.0" mnemonicParsing="false" onAction="#deleteButton" text="Delete" AnchorPane.rightAnchor="400.0" />
+                  <Button layoutX="380.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="Back" AnchorPane.leftAnchor="400.0" />
                </children>
             </AnchorPane>
          </children>

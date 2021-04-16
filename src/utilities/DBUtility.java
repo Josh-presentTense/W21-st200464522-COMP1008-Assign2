@@ -218,13 +218,14 @@ public class DBUtility {
         return fgCollectables;
     }
 
-    public static void addNewPrintMedia(PrintMedia pmCollectable) throws SQLException {
+    public static int addNewPrintMedia(PrintMedia pmCollectable) throws SQLException {
+        int print_media_ID = -1;
         String sql = "INSERT INTO print_medias (itemName, price, itemCondition, collectibleCategory, author, illustrator, publisher, pageCount) VALUES (?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
 
         try (Connection conn = DriverManager.getConnection(connString, user, password);) {
-            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement = conn.prepareStatement(sql, new String[]{"print_media_ID"});
 
             // Bind the values
             preparedStatement.setString(1, pmCollectable.getItemName());
@@ -238,11 +239,120 @@ public class DBUtility {
 
             // Execute the insert statement
             preparedStatement.executeUpdate();
+
+            //loop over the rs and get the print_media_ID
+            rs = preparedStatement.getGeneratedKeys();
+            while (rs.next())
+                print_media_ID = rs.getInt(1);
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             if (rs != null)
                 rs.close();
+            if(preparedStatement != null)
+                preparedStatement.close();
+        }
+
+        return print_media_ID;
+    }
+
+    public static int addNewVideoMedia(VideoMedia vmCollectable) throws SQLException {
+        int video_media_ID = -1;
+        String sql = "INSERT INTO video_medias (itemName, price, itemCondition, collectibleCategory, director, studio, episodes, runTime) VALUES (?,?,?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+
+        try (Connection conn = DriverManager.getConnection(connString, user, password);) {
+            preparedStatement = conn.prepareStatement(sql, new String[]{"video_media_ID"});
+
+            // Bind the values
+            preparedStatement.setString(1, vmCollectable.getItemName());
+            preparedStatement.setInt(2, vmCollectable.getPrice());
+            preparedStatement.setString(3, vmCollectable.getItemCondition());
+            preparedStatement.setString(4, vmCollectable.getCollectibleCategory());
+            preparedStatement.setString(5, vmCollectable.getDirector());
+            preparedStatement.setString(6, vmCollectable.getStudio());
+            preparedStatement.setInt(7, vmCollectable.getEpisodes());
+            preparedStatement.setInt(8, vmCollectable.getRunTime());
+
+            // Execute the insert statement
+            preparedStatement.executeUpdate();
+
+            //loop over the rs and get the video_media_ID
+            rs = preparedStatement.getGeneratedKeys();
+            while (rs.next())
+                video_media_ID = rs.getInt(1);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null)
+                rs.close();
+            if(preparedStatement != null)
+                preparedStatement.close();
+        }
+
+        return video_media_ID;
+    }
+
+    public static int addNewFigure(Figure fgCollectable) throws SQLException {
+        int figure_ID = -1;
+        String sql = "INSERT INTO figures (itemName, price, itemCondition, collectibleCategory, companyName, characterName, origin, scale) VALUES (?,?,?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+
+        try (Connection conn = DriverManager.getConnection(connString, user, password);) {
+            preparedStatement = conn.prepareStatement(sql, new String[]{"figure_ID"});
+
+            // Bind the values
+            preparedStatement.setString(1, fgCollectable.getItemName());
+            preparedStatement.setInt(2, fgCollectable.getPrice());
+            preparedStatement.setString(3, fgCollectable.getItemCondition());
+            preparedStatement.setString(4, fgCollectable.getCollectibleCategory());
+            preparedStatement.setString(5, fgCollectable.getCompanyName());
+            preparedStatement.setString(6, fgCollectable.getCharacterName());
+            preparedStatement.setString(7, fgCollectable.getOrigin());
+            preparedStatement.setString(8, fgCollectable.getScale());
+
+            // Execute the insert statement
+            preparedStatement.executeUpdate();
+
+            //loop over the rs and get the video_media_ID
+            rs = preparedStatement.getGeneratedKeys();
+            while (rs.next())
+                figure_ID = rs.getInt(1);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null)
+                rs.close();
+            if(preparedStatement != null)
+                preparedStatement.close();
+        }
+
+        return figure_ID;
+    }
+
+    public static void deleteCollectableItem(String classCategory, int collectableID) throws SQLException {
+        String sql = "";
+        if (classCategory.equals("PrintMedia"))
+            sql = String.format("DELETE FROM print_medias WHERE print_media_ID=%d", collectableID);
+        if (classCategory.equals("VideoMedia"))
+            sql = String.format("DELETE FROM video_medias WHERE video_media_ID=%d", collectableID);
+        if (classCategory.equals("Figure"))
+            sql = String.format("DELETE FROM figures WHERE figure_ID=%d", collectableID);
+
+        PreparedStatement preparedStatement = null;
+
+        try (Connection conn = DriverManager.getConnection(connString, user, password);) {
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
             if(preparedStatement != null)
                 preparedStatement.close();
         }

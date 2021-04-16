@@ -54,8 +54,9 @@ public class CreateFigureCollectableViewController implements Initializable {
                     originTextField.getText(),
                     scaleComboBox.getValue()
             );
+            int figure_ID = DBUtility.addNewFigure(figureCollectable);
             clearUserInput();
-            errorMessageLabel.setText(figureCollectable.toString());
+            errorMessageLabel.setText("F.ID: " + figure_ID + " " + figureCollectable.toString() + " Created");
         } catch (IllegalArgumentException e){
             errorMessageLabel.setText(e.getMessage());
         } catch (Exception e) {

@@ -122,35 +122,35 @@ public class UserCollectionViewController implements Initializable {
     }
 
     /**
-     * On Delete button press, delete selected listview item from DB
+     * On Delete button press, delete selected listview item from DB (NOT WORKING)
      */
     @FXML
     private void deleteButton(ActionEvent event) throws SQLException {
-        itemSelected = collectionListView.getSelectionModel().getSelectedItem();
-
-        if (itemSelected != null && itemSelected.getClass() == PrintMedia.class) {
-            pmSelected = (PrintMedia) collectionListView.getSelectionModel().getSelectedItem();
-            collectableItemID = pmSelected.getPrint_media_ID();
-
-            DBUtility.deleteCollectableItem("PrintMedia", collectableItemID);
-            resetUserCollectionPage();
-        }
-
-        if (itemSelected != null && itemSelected.getClass() == VideoMedia.class) {
-            vmSelected = (VideoMedia) collectionListView.getSelectionModel().getSelectedItem();
-            collectableItemID = vmSelected.getVideo_media_ID();
-
-            DBUtility.deleteCollectableItem("VideoMedia", collectableItemID);
-            resetUserCollectionPage();
-        }
-
-        if (itemSelected != null && itemSelected.getClass() == Figure.class) {
-            fgSelected = (Figure) collectionListView.getSelectionModel().getSelectedItem();
-            collectableItemID = fgSelected.getFigure_ID();
-
-            DBUtility.deleteCollectableItem("Figure", collectableItemID);
-            resetUserCollectionPage();
-        }
+//        itemSelected = collectionListView.getSelectionModel().getSelectedItem();
+//
+//        if (itemSelected != null && itemSelected.getClass() == PrintMedia.class) {
+//            pmSelected = (PrintMedia) collectionListView.getSelectionModel().getSelectedItem();
+//            collectableItemID = pmSelected.getPrint_media_ID();
+//
+//            DBUtility.deleteCollectableItem("PrintMedia", collectableItemID);
+//            resetUserCollectionPage();
+//        }
+//
+//        if (itemSelected != null && itemSelected.getClass() == VideoMedia.class) {
+//            vmSelected = (VideoMedia) collectionListView.getSelectionModel().getSelectedItem();
+//            collectableItemID = vmSelected.getVideo_media_ID();
+//
+//            DBUtility.deleteCollectableItem("VideoMedia", collectableItemID);
+//            resetUserCollectionPage();
+//        }
+//
+//        if (itemSelected != null && itemSelected.getClass() == Figure.class) {
+//            fgSelected = (Figure) collectionListView.getSelectionModel().getSelectedItem();
+//            collectableItemID = fgSelected.getFigure_ID();
+//
+//            DBUtility.deleteCollectableItem("Figure", collectableItemID);
+//            resetUserCollectionPage();
+//        }
     }
 
     /**

@@ -56,6 +56,7 @@ public class CreatePrintMediaCollectableController implements Initializable {
                     pageCountSpinner.getValue()
             );
             int print_media_ID = DBUtility.addNewPrintMedia(printMediaCollectable);
+
             clearUserInput();
             errorMessageLabel.setText("PM.ID: " + print_media_ID + " " + printMediaCollectable.toString() + " Created");
         } catch (IllegalArgumentException e){

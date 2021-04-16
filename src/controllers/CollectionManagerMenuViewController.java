@@ -15,6 +15,9 @@ import java.util.ResourceBundle;
 public class CollectionManagerMenuViewController implements Initializable {
 
     @FXML
+    private Label titleLabel;
+
+    @FXML
     private ComboBox<String> categoryComboBox;
 
     @FXML

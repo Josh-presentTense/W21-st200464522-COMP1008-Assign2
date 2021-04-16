@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DBUtility {
-    private static String user = "root";
-    private static String password = "SQLJosh9891";
+    // ADD CONNECTION INFO TO RUN
+    private static String user = "";
+    private static String password = "";
     private static String connString = "jdbc:mysql://localhost:3306/collection_manager";
 
     /**
